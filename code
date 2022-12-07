@@ -3,5 +3,5 @@ print('Введите текст для перевода в азбуку Мор�
 c = str(input())
 s=''
 for i in range(len(c)):
-    s+=morze.get(c[i])
+    s+=morze.get(c[i])+' ' 
 print(s)
