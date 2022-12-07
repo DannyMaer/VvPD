@@ -4,4 +4,4 @@ c = str(input())
 s=''
 for i in range(len(c)):
     s+=morze.get(c[i])+' ' 
-print(s)
+print('Результат перевода: ', '\n', s)
