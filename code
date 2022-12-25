@@ -1,6 +1,7 @@
 from tkinter import *
 import winsound
 import time
+# код программы
 def Morze():
 
     morze = {' ': ' ', 'а': '•-', 'б': '-•••', 'в': '•--', 'г': '--•', 'д': '-••',
@@ -18,14 +19,14 @@ def Morze():
              '.': '••••••', ',': '•-•-•-', '?': '••--••', '—': '-••••-', '"': '•-••-•',
              ';': '-•-•-•', '!': '--••--', '(': '-•--•-', ')': '-•--•-', ':': '---•••',
              '+': '•-•-•'}
-    с = entry1.get()
+    c = entry1.get()
     s = ''
     b = 500  # частота звука
     n = 150  # длина точки
-    for i in range(len(с)):
-        s += morze.get(с[i]) + ' '
-    label3.config(text = str(s), font=("Arial", 18))
-    for j in range(len(s)):
+    for i in range(len(c)): # обработка текста посимвольно
+        s += morze.get(c[i]) + ' '
+    label3.config(text = str(s), font=("Arial", 18)) # вывод массива в программе
+    for j in range(len(s)): # вывод массива звуками
         if s[j] == '•':
             winsound.Beep(b, n)
         if s[j] == '-':
@@ -33,11 +34,12 @@ def Morze():
         if s[j] == ' ':
             time.sleep(n * 2 * 0.001)
 
-
+# интерфейс программы
 root = Tk()
 
+root['bg'] = '#778899'
 root.title("Morze-переводчик")
-root.geometry("1000x500")
+root.geometry("500x400")
 root.resizable(width = False, height = False)
 
 label1 = Label(root, text = "Введите текст:", font = ("Arial", 24, "bold"))
@@ -48,6 +50,6 @@ button1 = Button(root, text = "Преобразовать", font = 40, command =
 button1.place(x = 5, y = 80)
 label2 = Label(root, text = "Результат:", font = ("Arial", 24, "bold"))
 label2.place(x = 0, y = 130)
-label3 = Label(root, text = "")
+label3 = Label(root)
 label3.place(x = 5, y = 180)
 root.mainloop()
