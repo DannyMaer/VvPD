@@ -25,8 +25,8 @@ def Morze():
     n = 150  # длина точки
     for i in range(len(c)): # обработка текста посимвольно
         s += morze.get(c[i]) + ' '
-    label3.config(text = str(s), font=("Arial", 18)) # вывод массива в программе
-    for j in range(len(s)): # вывод массива звуками
+    label3.config(text = str(s), font=("Arial", 18)) # вывод строки в программе
+    for j in range(len(s)): # вывод строки звуками
         if s[j] == '•':
             winsound.Beep(b, n)
         if s[j] == '-':
